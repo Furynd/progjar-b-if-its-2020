@@ -20,18 +20,16 @@ while True:
 	print('connection from' + str(client_address))
 	now = datetime.now()
 
-	FILE = open('server/received.csv','wb')
+	# Receive the request
+	req = connection.recv(1024)
 
-	# Receive the data
-	while True:
-		# try:
-		data = connection.recv(1024)
-		if data:
-			FILE.write(data)
-		else:
-			break
-		# except:
-			# Clean up the connection
-	print('file received successfully.')
-	FILE.close()
+	try:
+		if req:
+			FILE = open(req, 'rb')
+			buff = FILE.read()
+			connection.sendall(buff)
+			print('File sent.')
+			FILE.close()
+	except:
+		print('Error Occured.')
 	connection.close()
