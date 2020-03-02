@@ -12,7 +12,7 @@ fp = open(NAMAFILE,'wb+')
 ditulis=0
 
 while True:
-    data, addr = sock.recvfrom(1)
+    data, addr = sock.recvfrom(1024)
     print("blok ", len(data), data[0:10])
     fp.write(data)
 

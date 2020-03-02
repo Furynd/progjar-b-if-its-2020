@@ -14,6 +14,6 @@ fp = open('bart.png','rb')
 k = fp.read()
 terkirim=0
 for x in k:
-   sock.sendto(bytes(k), (TARGET_IP, TARGET_PORT))
+   sock.sendto(bytes([x]), (TARGET_IP, TARGET_PORT))
    terkirim = terkirim + 1
    print(f"terkirim {terkirim} of {ukuran} ")
