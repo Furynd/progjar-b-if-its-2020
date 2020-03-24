@@ -25,8 +25,8 @@ class ProcessTheClient(threading.Thread):
                 data+=dataa
             if data:
                 dd=b'a'
-                if(len(data.split(b'AOE', 1))==2):
-                    dd, data = data.split(b'AOE', 1)
+                if(len(data.split(b'ITS', 1))==2):
+                    dd, data = data.split(b'ITS', 1)
                 d = data.decode()
                 cstring = d.split(" ")
                 command = cstring[0].strip()
