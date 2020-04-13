@@ -34,7 +34,7 @@ class ProcessTheClient(threading.Thread):
 				else:
 					break
 			except OSError as e:
-				pass
+				break
 		self.connection.close()
 
 class Server(threading.Thread):
